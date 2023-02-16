@@ -8,16 +8,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity @Table( name="annonce")
+
+@Entity @Table(name="annonce")
 public class Annonce {
 
-	@Id @GeneratedValue( strategy = GenerationType.IDENTITY)
+	@Id @GeneratedValue( strategy= GenerationType.IDENTITY)
 	private int id;
 	
 	private String titre;
 	private String description;
 	private int price;
 	private Date date;
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getTitre() {
 		return titre;
 	}
