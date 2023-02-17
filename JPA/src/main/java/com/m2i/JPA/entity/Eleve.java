@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.github.javafaker.Faker;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,10 +31,13 @@ public class Eleve {
 
 	public Eleve(int classe, String firstName, String lastName, int age) {
 		super();
-		this.classe = classe;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.age = age;
+		
+		Faker faker = new Faker();
+		
+		this.classe = faker.number().randomDigit();
+		this.firstName = faker.name().firstName();
+		this.lastName = faker.name().lastName();
+		this.age = faker.number().numberBetween(18, 50);
 	}
 	
 }

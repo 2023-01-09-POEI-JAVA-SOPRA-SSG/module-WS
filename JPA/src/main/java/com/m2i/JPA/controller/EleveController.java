@@ -22,6 +22,12 @@ public class EleveController {
 	@Autowired
 	EleveService eService;
 	
+	@GetMapping("/fake")
+	public Eleve fakeEleve() {
+		Eleve e = new Eleve(0, null, null, 0);
+		eService.create(e);
+		return e;
+	}
 	
 	@GetMapping("/{id}")
 	public Eleve getEleveById(@PathVariable("id") int id) {
