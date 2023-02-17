@@ -29,19 +29,6 @@ DELETE http://localhost:8080/annonce/{id}
 
  */
 
-/*
- @RequestMapping(value="/rawdata/", method = RequestMethod.PUT)
-public ResponseEntity<?> create(@RequestBody String data) {
-    if(everything_fine) {
-        return new ResponseEntity<>(RestModel, HttpStatus.OK);
-    } else {
-        return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-}
- */
-
-
-
 @RestController
 @RequestMapping("/annonce")
 public class AnnonceController {
